@@ -47,7 +47,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="Multidimensional Kriging - Generated data" src="../images/multidimensional_kriging-generated_data.png"/>
+    <img alt="Multidimensional Kriging - Generated data" src="images/multidimensional_kriging-generated_data.png"/>
 </p>
 
 ## Load the data & fit a variogram function
@@ -69,7 +69,7 @@ kgn.summarize()
 ```
 
 <p align="center">
-    <img alt="Multidimensional Kriging - Quick Fitting Check" src="../images/multidimensional_kriging-fitting_check.png"/>
+    <img alt="Multidimensional Kriging - Quick Fitting Check" src="images/multidimensional_kriging-fitting_check.png"/>
 </p>
 
 ## Predict
@@ -111,5 +111,5 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="Multidimensional Kriging - Prediction Result" src="../images/multidimensional_kriging-prediction_result.png"/>
+    <img alt="Multidimensional Kriging - Prediction Result" src="images/multidimensional_kriging-prediction_result.png"/>
 </p>

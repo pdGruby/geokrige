@@ -4,8 +4,6 @@
     <img alt="GeoKrige banner" src="images/geokrige_baner.png"/>
 </p>
 
-For comprehensive documentation, please visit [readthedocs webpage.](https://geokrige.readthedocs.io/en/latest/?).
-
 ## What is GeoKrige?
 
 **GeoKrige is a Python package designed for spatial interpolation using Kriging Methods.** While primarily tailored for 

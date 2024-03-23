@@ -157,7 +157,7 @@ kgn.fit(model=my_variogram_model)
 ```
 
 <p align="center">
-    <img alt="Custom variogram model" src="../images/creating_custom_variogram_models-my_variogram.png"/>
+    <img alt="Custom variogram model" src="images/creating_custom_variogram_models-my_variogram.png"/>
 </p>
 
 The plot above does not effectively depict the characteristics of the selected variogram model. This situation is 
@@ -174,14 +174,14 @@ kgn.fit(model=my_variogram_model, sill_param=1.5, range_param=4, nugget_param=0)
 ```
 
 <p align="center">
-    <img alt="Custom variogram model - fixed parameters" src="../images/creating_custom_variogram_models-my_variogram_fixed.png"/>
+    <img alt="Custom variogram model - fixed parameters" src="images/creating_custom_variogram_models-my_variogram_fixed.png"/>
 </p>
 
 Below is the covariance matrix that illustrates the covariance between specific points. This matrix is generated using 
 the covariance function.
 
 <p align="center">
-    <img alt="Custom variogram model - fixed parameters" src="../images/creating_custom_variogram_models-cov_matrix.png"/>
+    <img alt="Custom variogram model - fixed parameters" src="images/creating_custom_variogram_models-cov_matrix.png"/>
 </p>
 
 ## General notes
