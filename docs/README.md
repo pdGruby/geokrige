@@ -76,5 +76,5 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="GeoKrige - simple prediction result" src="../images/index-prediction.png"/>
+    <img alt="GeoKrige - simple prediction result" src="docs/images/index-prediction.png"/>
 </p>
