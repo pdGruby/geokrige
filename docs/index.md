@@ -4,7 +4,7 @@
     <img alt="GeoKrige banner" src="images/geokrige_baner.png"/>
 </p>
 
-For comprehensive documentation, please visit [geokrige.org](https://geokrige.readthedocs.io/en/latest/).
+For comprehensive documentation, please visit [readthedocs webpage.](https://geokrige.readthedocs.io/en/latest/?).
 
 ## What is GeoKrige?
 

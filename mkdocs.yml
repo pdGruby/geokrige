@@ -2,7 +2,7 @@ site_name: GeoKrige documentation (v1.0.0)
 repo_url: https://github.com/pdGruby/geokrige
 
 nav:
-  - Welcome to GeoKrige: README.md
+  - Welcome to GeoKrige: index.md
   - How to start?:
       - Installation: installation.md
       - Start Guide to GeoKrige: getting_started.md
