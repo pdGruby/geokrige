@@ -5,7 +5,7 @@
 To start using GeoKrige, users **must be** familiar with the basics of:
 
 - Python programming language
-- Data manipulation techniques using the [numpy](https://numpy.org/doc/stable/index.html) package
+- Data manipulation techniques using the [`numpy`](https://numpy.org/doc/stable/index.html) package
 
 For full utilization of the GeoKrige package, users **should be** familiar with the basics of:
 
@@ -56,7 +56,7 @@ y = np.array([5, 5.5, 6, 6.3, 5.5, 6, 7, 8, 7, 6.5, 6])
 ```
 
 <p align="center">
-    <img alt="GeoKrige - sample data" src="images/getting_started-created_data.png"/>
+    <img alt="GeoKrige - sample data" src="../images/getting_started-created_data.png"/>
 </p>
 
 Now, the data can be loaded for further processing.
@@ -87,7 +87,7 @@ kgn.variogram(bins=10)
 ```
 
 <p align="center">
-    <img alt="GeoKrige - variogram" src="images/getting_started-variogram.png"/>
+    <img alt="GeoKrige - variogram" src="../images/getting_started-variogram.png"/>
 </p>
 
 The `variogram` method automatically plots the variogram. The number of bins specified in the `bins` parameter is 
@@ -116,7 +116,7 @@ kgn.fit()
 ```
 
 <p align="center">
-    <img alt="GeoKrige - fitted variogram" src="images/getting_started-fitted_variogram.png"/>
+    <img alt="GeoKrige - fitted variogram" src="../images/getting_started-fitted_variogram.png"/>
 </p>
 
 **At this moment, the Kriging Model is ready to make predictions.** However, there is one more component worth having a 
@@ -152,7 +152,7 @@ point represented by indices [1, 2] in matrix A (x-coordinates) is considered, t
 found at the same position in matrix B (y-coordinates).
 
 <p align="center">
-    <img alt="GeoKrige - Mesh Grid" src="images/getting_started-2D_Mesh_Grid_creation_process.png"/>
+    <img alt="GeoKrige - Mesh Grid" src="../images/getting_started-2D_Mesh_Grid_creation_process.png"/>
 </p>
 
 **A mesh grid can be easily generated with the** `meshgrid` **function from the** `numpy` **package.** In the case below, 
@@ -193,7 +193,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="GeoKrige - Kriging Interpolation Result" src="images/getting_started-interpolation_result.png"/>
+    <img alt="GeoKrige - Kriging Interpolation Result" src="../images/getting_started-interpolation_result.png"/>
 </p>
 
 The `predict` method is designed to accept mesh grids created with the `numpy.meshgrid` function and return another mesh

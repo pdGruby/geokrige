@@ -45,7 +45,7 @@ kgn.fit(model='linear')
 ```
 
 <p align="center">
-    <img alt="Automatically fitted variogram function" src="images/creating_custom_variogram_models-autom_fitted.png"/>
+    <img alt="Automatically fitted variogram function" src="../images/creating_custom_variogram_models-autom_fitted.png"/>
 </p>
 
 In this case, the parameters have been automatically estimated and can be viewed using the `learned_params` attribute of 
@@ -73,7 +73,7 @@ kgn.fit(model='linear', sill_param=0.5, range_param=1)
 ```
 
 <p align="center">
-    <img alt="Fixed parameters in a variogram function" src="images/creating_custom_variogram_models-fixed_params.png"/>
+    <img alt="Fixed parameters in a variogram function" src="../images/creating_custom_variogram_models-fixed_params.png"/>
 </p>
 
 If only one of the parameters is fixed, the other one will be estimated. The plots below illustrate the impact of the 
@@ -88,7 +88,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="Fixed parameters in a variogram function" src="images/creating_custom_variogram_models-fixed_range_param.png"/>
+    <img alt="Fixed parameters in a variogram function" src="../images/creating_custom_variogram_models-fixed_range_param.png"/>
 </p>
 
 ```py
@@ -100,7 +100,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="Fixed parameters in a variogram function" src="images/creating_custom_variogram_models-fixed_sill_param.png"/>
+    <img alt="Fixed parameters in a variogram function" src="../images/creating_custom_variogram_models-fixed_sill_param.png"/>
 </p>
 
 Note that **fixing the** `distance` **parameter to a specific value is also possible, and it would not raise any 
@@ -116,5 +116,5 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="Fixed parameters in a variogram function" src="images/creating_custom_variogram_models-fixed_distance_param.png"/>
+    <img alt="Fixed parameters in a variogram function" src="../images/creating_custom_variogram_models-fixed_distance_param.png"/>
 </p>

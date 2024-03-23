@@ -18,7 +18,7 @@ data_df.head(5)
 ```
 
 <p align="center">
-    <img alt="Loaded data" src="images/using_geokrige_with_rasterio-loaded_data_info_and_head.png"/>
+    <img alt="Loaded data" src="../images/using_geokrige_with_rasterio-loaded_data_info_and_head.png"/>
 </p>
 
 The loaded data represents mean air temperature values for 48 synoptic stations situated in Poland. The dataset spans 
@@ -45,7 +45,7 @@ kgn.variogram()
 ```
 
 <p align="center">
-    <img alt="GeoKrige & rasterio - variogram" src="images/using_geokrige_with_rasterio-variogram.png"/>
+    <img alt="GeoKrige & rasterio - variogram" src="../images/using_geokrige_with_rasterio-variogram.png"/>
 </p>
 
 ## Fit function to the variogram
@@ -55,7 +55,7 @@ kgn.fit(model='exp')
 ```
 
 <p align="center">
-    <img alt="GeoKrige & rasterio - fitted_variogram" src="images/using_geokrige_with_rasterio-fitted_variogram.png"/>
+    <img alt="GeoKrige & rasterio - fitted_variogram" src="../images/using_geokrige_with_rasterio-fitted_variogram.png"/>
 </p>
 
 Here, the exponential variogram model is utilized, which effectively fits the data. For additional information regarding 
@@ -82,7 +82,7 @@ other raster file covering the latitudes and longitudes of Poland can be used in
 This is how the loaded data looks like:
 
 <p align="center">
-    <img alt="Interpolation map without the mask" src="images/using_geokrige_with_rasterio-loaded_raster_data.png"/>
+    <img alt="Interpolation map without the mask" src="../images/using_geokrige_with_rasterio-loaded_raster_data.png"/>
 </p>
 
 
@@ -149,7 +149,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="Interpolation map without the mask" src="images/using_geokrige_with_rasterio-mesh_grids_differences.png"/>
+    <img alt="Interpolation map without the mask" src="../images/using_geokrige_with_rasterio-mesh_grids_differences.png"/>
 </p>
 
 Since the data used to build the Kriging Model only covers Poland, the predictions outside Poland's borders are not 

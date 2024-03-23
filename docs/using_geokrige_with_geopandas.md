@@ -18,7 +18,7 @@ data_gdf.head(5)
 ```
 
 <p align="center">
-    <img alt="Loaded data" src="images/using_geokrige_with_geopandas-loaded_data_info_and_head.png"/>
+    <img alt="Loaded data" src="../images/using_geokrige_with_geopandas-loaded_data_info_and_head.png"/>
 </p>
 
 The loaded data represents mean air temperature values for 48 synoptic stations situated in Poland. The dataset spans 
@@ -31,7 +31,7 @@ data_gdf.geometry.head()
 ```
 
 <p align="center">
-    <img alt="Loaded data - geometry" src="images/using_geokrige_with_geopandas-loaded_data_geometry.png"/>
+    <img alt="Loaded data - geometry" src="../images/using_geokrige_with_geopandas-loaded_data_geometry.png"/>
 </p>
 
 **It is essential to note that the geometry column must exclusively contain points of type POINT** when a GeoDataFrame 
@@ -56,7 +56,7 @@ kgn.variogram()
 ```
 
 <p align="center">
-    <img alt="GeoKrige & GeoPandas - variogram" src="images/using_geokrige_with_geopandas-variogram.png"/>
+    <img alt="GeoKrige & GeoPandas - variogram" src="../images/using_geokrige_with_geopandas-variogram.png"/>
 </p>
 
 ## Fit function to the variogram
@@ -66,7 +66,7 @@ kgn.fit(model='exp')
 ```
 
 <p align="center">
-    <img alt="GeoKrige & GeoPandas - fitted_variogram" src="images/using_geokrige_with_geopandas-fitted_variogram.png"/>
+    <img alt="GeoKrige & GeoPandas - fitted_variogram" src="../images/using_geokrige_with_geopandas-fitted_variogram.png"/>
 </p>
 
 Here, the exponential variogram model is utilized, which effectively fits the data. For additional information regarding 
@@ -139,7 +139,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="Interpolation map without the mask" src="images/using_geokrige_with_geopandas-interpolation_map_no_mask.png"/>
+    <img alt="Interpolation map without the mask" src="../images/using_geokrige_with_geopandas-interpolation_map_no_mask.png"/>
 </p>
 
 ```py
@@ -158,7 +158,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="Interpolation map with the mask" src="images/using_geokrige_with_geopandas-interpolation_map_mask.png"/>
+    <img alt="Interpolation map with the mask" src="../images/using_geokrige_with_geopandas-interpolation_map_mask.png"/>
 </p>
 
 In this context, **the previously created mask is used to conceal pixels that fall outside the POLYGONS delineated by the 
@@ -202,7 +202,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="Denser interpolation map with the mask" src="images/using_geokrige_with_geopandas-interpolation_map_dense.png"/>
+    <img alt="Denser interpolation map with the mask" src="../images/using_geokrige_with_geopandas-interpolation_map_dense.png"/>
 </p>
 
 ### Selecting specific POLYGONS
@@ -242,5 +242,5 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="Interpolation map with the mask for selected polygons" src="images/using_geokrige_with_geopandas-interpolation_map_selected_polygons.png"/>
+    <img alt="Interpolation map with the mask for selected polygons" src="../images/using_geokrige_with_geopandas-interpolation_map_selected_polygons.png"/>
 </p>
