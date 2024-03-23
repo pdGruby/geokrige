@@ -128,7 +128,7 @@ kgn.plot_cov_matrix()
 ```
 
 <p align="center">
-    <img alt="GeoKrige - covariance matrix" src="images/getting_started-covariance_matrix.png"/>
+    <img alt="GeoKrige - covariance matrix" src="../images/getting_started-covariance_matrix.png"/>
 </p>
 
 The covariance between points with measured values is calculated on the basis of a covariance function that uses the 
