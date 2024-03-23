@@ -5,7 +5,7 @@ nav:
   - Welcome to GeoKrige: index.md
   - How to start?:
       - Installation: installation.md
-  - Start Guide to GeoKrige: getting_started.md
+      - Start Guide to GeoKrige: getting_started.md
   - Built-in Variogram Models: built-in_variogram_models.md
   - GeoKrige Classes:
       - OrdinaryKriging, SimpleKriging, UniversalKriging: kriging_classes_description.md
