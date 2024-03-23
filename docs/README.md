@@ -1,7 +1,7 @@
 # Welcome to GeoKrige
 
 <p align="center">
-    <img alt="GeoKrige banner" src="../images/geokrige_baner.png"/>
+    <img alt="GeoKrige banner" src="images/geokrige_baner.png"/>
 </p>
 
 For comprehensive documentation, please visit [geokrige.org](https://geokrige.readthedocs.io/en/latest/).
@@ -76,5 +76,5 @@ plt.show()
 ```
 
 <p align="center">
-    <img alt="GeoKrige - simple prediction result" src="docs/images/index-prediction.png"/>
+    <img alt="GeoKrige - simple prediction result" src="images/index-prediction.png"/>
 </p>
