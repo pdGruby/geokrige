@@ -7,7 +7,7 @@ In numerous scenarios, users may already possess a mesh grid in a raster file fo
 structured exactly the same as the output of the** `numpy.meshgrid` **function.**
 
 Additionally, the built-in transformer streamlines the process of effortlessly generating new raster files based on a 
-loaded raster file. Moreover, it provides the functionality to append new layers to existing raster files.
+loaded raster file.
 
 ## Load tutorial data
 ```py
@@ -85,8 +85,6 @@ This is how the loaded data looks like:
     <img alt="Interpolation map without the mask" src="../images/using_geokrige_with_rasterio-loaded_raster_data.png"/>
 </p>
 
-
-
 ### Creating a mesh grid on the basis of the raster file
 
 ```py
@@ -156,10 +154,10 @@ Since the data used to build the Kriging Model only covers Poland, the predictio
 accurate. However, the mesh grid created for predictions matches exactly the same area as the mesh grid stored in 
 the loaded raster file, which is clearly visible in the plot above.
 
-## Saving mesh grids as raster files
+## Saving mesh grids as a raster file
 
 The `TransformerRasterio` object offers another handy feature, allowing users to save mesh grids into a newly created 
-raster file (GeoTIFF file) or add another layer to the loaded raster file.
+raster file (GeoTIFF file).
 
 When creating a new raster file, the transformer will utilize parameters such as height, width, and shape from the 
 loaded raster file. Consequently, the new raster file will be an exact replica of the loaded raster file, but with 
@@ -167,11 +165,4 @@ different layers (mesh grids) embedded within.
 
 ```py
 transformer.save(layers=[predicted_Z], path='predicted_temperature_values.tif')
-```
-
-Instead of specifying the `path` parameter, you can set the `inplace` parameter to `True`. In this scenario, a new layer 
-will be added to the loaded raster file.
-
-```py
-transformer.save(layers=[predicted_Z], inplace=True)
 ```

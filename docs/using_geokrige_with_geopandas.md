@@ -42,7 +42,7 @@ object is passed to the `load` method.
 from geokrige.methods import SimpleKriging
 
 kgn = SimpleKriging()
-kgn.load(X, y='temp')
+kgn.load(data_gdf, y='temp')
 ```
 
 In this tutorial, we will use the Simple Kriging Method. For further details regarding the distinctions between 
@@ -127,7 +127,7 @@ import matplotlib.pyplot as plt
 ```py
 fig, ax = plt.subplots()
 
-X.plot(color='grey', zorder=6, ax=ax)  # known points
+data_gdf.plot(color='grey', zorder=6, ax=ax)  # known points
 prediction_gdf.plot(facecolor='none', edgecolor='black', linewidth=1, zorder=5, ax=ax)  # borders
 
 X_lon, Y_lat = meshgrid
@@ -145,7 +145,7 @@ plt.show()
 ```py
 fig, ax = plt.subplots()
 
-X.plot(color='grey', zorder=6, ax=ax)  # known points
+data_gdf.plot(color='grey', zorder=6, ax=ax)  # known points
 prediction_gdf.plot(facecolor='none', edgecolor='black', linewidth=1, zorder=5, ax=ax)  # borders
 
 X_lon, Y_lat = meshgrid
@@ -189,7 +189,7 @@ Z = kgn.predict(meshgrid)
 ```py
 fig, ax = plt.subplots()
 
-X.plot(color='grey', zorder=6, ax=ax)  # known points
+data_gdf.plot(color='grey', zorder=6, ax=ax)  # known points
 prediction_gdf.plot(facecolor='none', edgecolor='black', linewidth=1, zorder=5, ax=ax)  # borders
 
 X_lon, Y_lat = meshgrid
@@ -229,7 +229,7 @@ Z = kgn.predict(meshgrid)
 ```py
 fig, ax = plt.subplots()
 
-X.plot(color='grey', zorder=6, ax=ax)  # known points
+data_gdf.plot(color='grey', zorder=6, ax=ax)  # known points
 prediction_gdf.plot(facecolor='none', edgecolor='black', linewidth=1, zorder=5, ax=ax)  # borders
 
 X_lon, Y_lat = meshgrid
