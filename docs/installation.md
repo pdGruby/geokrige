@@ -8,12 +8,6 @@ GeoKrige requires Python 3.10+ and can be installed via PyPi with the following 
 pip install geokrige
 ```
 
-It can be also installed with conda:
-
-```{bash}
-conda install geokrige
-```
-
 ## Dependencies
 
 The package has some additional dependencies that need to be installed:

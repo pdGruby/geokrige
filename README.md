@@ -1,10 +1,11 @@
 <p align="center">
-    <img alt="GeoKrige banner" src="docs/images/geokrige_baner.png"/>
+    <img alt="GeoKrige banner" src="https://raw.githubusercontent.com/pdGruby/geokrige/main/docs/images/geokrige_baner.png"/>
 </p>
 
 For comprehensive documentation, please visit the [readthedocs webpage](https://geokrige.readthedocs.io/latest/).
 
-[![PyPi downloads](https://static.pepy.tech/badge/geokrige)](https://pepy.tech/project/cloupy)
+[![PyPi Downloads](https://static.pepy.tech/badge/geokrige)](https://pepy.tech/project/geokrige)
+[![Documentation Status](https://readthedocs.org/projects/geokrige/badge/?version=latest)](https://geokrige.readthedocs.io/latest/?badge=latest)
 
 ## What is GeoKrige?
 
