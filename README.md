@@ -2,7 +2,9 @@
     <img alt="GeoKrige banner" src="docs/images/geokrige_baner.png"/>
 </p>
 
-For comprehensive documentation, please visit the [readthedocs webpage.](https://geokrige.readthedocs.io/latest/).
+For comprehensive documentation, please visit the [readthedocs webpage](https://geokrige.readthedocs.io/latest/).
+
+[![PyPi downloads](https://static.pepy.tech/badge/geokrige)](https://pepy.tech/project/cloupy)
 
 ## What is GeoKrige?
 
@@ -22,8 +24,14 @@ interpolation maps)
 
 ## Contribution
 
-...
+There are few topics to which you can contribute:
+
+- implementing the Universal Kriging method
+- creating unit tests
+- designing a cool-looking logo :)
+
+If you have other ideas on how to improve the package, feel free to share them in the [`Ideas sction`](https://github.com/pdGruby/geokrige/discussions/categories/ideas)
 
 ## Support
 
-...
+Please, use the [`Q&A section`](https://github.com/pdGruby/geokrige/discussions/categories/q-a) in case you need a help.
