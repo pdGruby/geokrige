@@ -9,8 +9,7 @@ with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
 
 setup(
     name="geokrige",
-    # version='{{VERSION_PLACEHOLDER}}',
-    version='1.0.2',
+    version='{{VERSION_PLACEHOLDER}}',
     author="Kamil Grala",
     author_email="grala.kamil@outlook.com",
     description="GeoKrige is a Python package designed for spatial interpolation using Kriging Methods. While "
