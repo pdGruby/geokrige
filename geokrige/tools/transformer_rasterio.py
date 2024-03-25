@@ -79,11 +79,6 @@ class TransformerRasterio:
         path : str
             A path to the raster file that will be created.
 
-        Raises
-        ------
-        ValueError
-            If the combination of arguments is invalid.
-
         Returns
         -------
         None

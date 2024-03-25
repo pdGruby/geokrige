@@ -180,6 +180,10 @@ kgn.fit(model=my_variogram_model, sill_param=1.5, range_param=4, nugget_param=0)
 Below is the covariance matrix that illustrates the covariance between specific points. This matrix is generated using 
 the covariance function.
 
+```py
+kgn.plot_cov_matrix()
+```
+
 <p align="center">
     <img alt="Custom variogram model - fixed parameters" src="../images/creating_custom_variogram_models-cov_matrix.png"/>
 </p>

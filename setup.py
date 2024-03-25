@@ -5,11 +5,12 @@ import os
 here = os.path.abspath(os.path.dirname(__file__))
 
 with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
-    long_description = "\\n" + fh.read()
+    long_description = fh.read()
 
 setup(
     name="geokrige",
-    version='{{VERSION_PLACEHOLDER}}',
+    # version='{{VERSION_PLACEHOLDER}}',
+    version='1.0.2',
     author="Kamil Grala",
     author_email="grala.kamil@outlook.com",
     description="GeoKrige is a Python package designed for spatial interpolation using Kriging Methods. While "

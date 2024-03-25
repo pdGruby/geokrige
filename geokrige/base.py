@@ -1,7 +1,6 @@
 from abc import abstractmethod
 from typing import Union, List, Optional, Tuple
 import copy
-import warnings
 
 import numpy as np
 from geopandas.geodataframe import GeoDataFrame
@@ -220,8 +219,8 @@ class KrigingBase(KrigingDrafter):
 
         if bins <= 1 or bins > len(self.y):
             raise ValueError(f"Invalid input for the 'bins' parameter: {bins}. The 'bins' argument must be an integer "
-                             f"greater than 1 & it must be less than the length of a dependent variable vector -> "
-                             f"{len(self.y)}")
+                             f"greater than 1 & it must be less or equal to the length of a dependent variable vector "
+                             f"-> {len(self.y)}")
 
         self.scaler, self.y = self._standardize_y(self.y)
         dissimilarity = (np.abs(self.y[:, None] - self.y[None, :]) ** 2) / 2
@@ -410,6 +409,9 @@ class KrigingBase(KrigingDrafter):
         ------
         ValueError
             - If the 'fit' method has not been used yet.
+            - If the number of 'groups' provided is less than or equal to 1,
+            or greater than the number of the points on which the model was
+            trained on.
 
         Returns
         -------
@@ -419,41 +421,45 @@ class KrigingBase(KrigingDrafter):
         if not self._variogram_fitted:
             raise ValueError(f"A variogram function has not been fitted yet. Please, use the 'fit' method first")
 
+        if groups <= 1 or groups > self.X.shape[0]:
+            raise ValueError(f"Invalid input for the 'groups' parameter: {groups}. The 'groups' argument must be an "
+                             f"integer greater than 1 & must not be greater than the number of the points on which "
+                             f"the model was trained on -> {self.X.shape[0]}")
+
         if seed:
             np.random.seed(seed)
 
         evaluator = copy.deepcopy(self)
-        data = np.column_stack([self.X, self.y])
+        data = np.column_stack([self.X, self.scaler.inverse_transform(self.y.reshape(1, -1)).ravel()])
         np.random.shuffle(data)
 
         mae_result = 0
         rmse_result = 0
-        groups = np.array_split(data, groups)
-        for group in groups:
+        testing_groups = np.array_split(data, groups)
+        for group in testing_groups:
             mask = np.all(np.isin(data, group), axis=1)
 
-            train_X = data[~mask][:, 0:2]
-            train_y = data[~mask][:, 2]
+            train_X = data[~mask][:, 0: data.shape[1] - 1]
+            train_y = data[~mask][:, -1]
 
-            test_X = data[mask][:, 0:2]
-            test_y = data[mask][:, 2]
+            test_X = data[mask][:, 0: data.shape[1] - 1]
+            test_y = data[mask][:, -1]
 
-            evaluator.load(train_X, train_y)
+            # Simulating that the model was trained without testing points ---------------------------------------------
+            pairwise_distances = pdist(train_X, metric=self.distance_metric)
+            pairwise_distances = np.round(pairwise_distances, decimals=10)
+            evaluator.pairwise_distances = pairwise_distances
 
-            try:
-                evaluator.variogram(self.bins, self.distance_metric, plot=False)
-            except ValueError:
-                warnings.warn("There was an error encountered while attempting to create variogram bins for one of the "
-                              "created groups. This error could potentially impact the evaluation results. It's "
-                              "important to note that such errors are entirely random and may occur intermittently, "
-                              "depending on the characteristics of the groups randomly generated during the process. "
-                              "If this presents an issue, you may try adjusting the 'seed' or 'groups' arguments. "
-                              "Alternatively, if you're not utilizing the 'seed' parameter, you can simply rerun the "
-                              "evaluation process.")
-                continue
+            cov_learned = evaluator._create_cov_matrix()
+            cov_learned_inv = np.linalg.pinv(cov_learned)
+            evaluator.cov_learned = cov_learned
+            evaluator.cov_learned_inv = cov_learned_inv
 
-            evaluator.fit(self.variogram_model, self.cost_function, self.init_args, plot=False, **self.fixed_params)
-            predicted_y = evaluator.predict(test_X)
+            dist_matrix = pdist(train_X, test_X, metric=self.distance_metric)
+            evaluator.y = evaluator.scaler.transform(train_y.reshape(-1, 1)).ravel()
+            # ----------------------------------------------------------------------------------------------------------
+
+            predicted_y = evaluator.predict(test_X, dist_matrix)
 
             mae = np.abs(predicted_y - test_y).mean()
             rmse = np.sqrt(((predicted_y - test_y) ** 2).mean())

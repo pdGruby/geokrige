@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="GeoKrige banner" src="https://raw.githubusercontent.com/pdGruby/geokrige/main/docs/images/geokrige_baner.png"/>
+  <img alt="GeoKrige banner" src="https://geokrige.readthedocs.io/latest/images/geokrige_baner.png"/>
 </p>
 
 For comprehensive documentation, please visit the [readthedocs webpage](https://geokrige.readthedocs.io/latest/).
