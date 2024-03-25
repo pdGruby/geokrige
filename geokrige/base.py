@@ -445,7 +445,7 @@ class KrigingBase(KrigingDrafter):
             np.random.seed(seed)
 
         evaluator = copy.deepcopy(self)
-        data = np.column_stack([self.X, self.scaler.inverse_transform(self.y.reshape(1, -1)).ravel()])
+        data = np.column_stack([self.X, self.y_loaded])  # self.X since GDF object is not wanted here
         np.random.shuffle(data)
 
         mae_result = 0
