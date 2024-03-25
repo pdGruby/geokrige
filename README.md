@@ -6,6 +6,7 @@ For comprehensive documentation, please visit the [readthedocs webpage](https://
 
 [![PyPi Downloads](https://static.pepy.tech/badge/geokrige)](https://pepy.tech/project/geokrige)
 [![Documentation Status](https://readthedocs.org/projects/geokrige/badge/?version=latest)](https://geokrige.readthedocs.io/latest/?badge=latest)
+[![DOI](https://zenodo.org/badge/776209752.svg)](https://zenodo.org/doi/10.5281/zenodo.10866997)
 
 ## What is GeoKrige?
 
