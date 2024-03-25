@@ -30,13 +30,22 @@ class KrigingBase(KrigingDrafter):
     VARIOGRAM_MODEL_FUNCTIONS : dict
         Dictionary containing variogram and covariance functions for different models.
 
+    X_loaded : Union[np.ndarray, GeoDataFrame]
+        The original 'X' data loaded using the 'load' method (no transformation
+        performed on this object).
+
+    y_loaded : Union[np.ndarray, str]
+        The original 'y' data loaded using the 'load' method (no transformation
+        performed on this object).
+
     X : Union[ndarray]
         Input data loaded using the 'load' method. If a GeoDataFrame object has been
         loaded, it undergoes transformation and is then stored in this attribute as
         an ndarray object.
 
     y : Union[ndarray, str]
-        Dependent variable values.
+        Dependent variable values. The values here are transformed by the 'scaler'
+        object.
 
     scaler : StandardScaler
         StandardScaler object for data scaling.
@@ -125,8 +134,11 @@ class KrigingBase(KrigingDrafter):
     def __init__(self):
         super().__init__()
 
-        self.X: Optional[Union[np.ndarray, GeoDataFrame, list]] = None
-        self.y: Optional[Union[np.ndarray, str, list]] = None
+        self.X_loaded: Optional[Union[np.ndarray, GeoDataFrame]] = None
+        self.y_loaded: Optional[Union[np.ndarray, str]] = None
+
+        self.X: Optional[np.ndarray] = None
+        self.y: Optional[Union[np.ndarray, str]] = None
         self.scaler: Optional[StandardScaler] = None
 
         self.bins: Optional[int] = None
@@ -179,6 +191,9 @@ class KrigingBase(KrigingDrafter):
 
         if isinstance(X, GeoDataFrame) and not isinstance(y, str):
             raise TypeError("The 'X' argument is of type 'GeoDataFrame', so the 'y' argument must be of type 'str'.")
+
+        self.X_loaded = copy.deepcopy(X)
+        self.y_loaded = copy.deepcopy(y)
 
         if isinstance(X, GeoDataFrame):
             y = X.loc[:, y].to_numpy()
