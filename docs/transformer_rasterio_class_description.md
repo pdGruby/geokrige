@@ -10,7 +10,7 @@ A class for handling operations on a [`rasterio`](https://rasterio.readthedocs.i
 This class makes it possible to **create effortlessly a mesh grid** for the `predict` method.
 
 The class also allows to **save created mesh grids into a new GeoTIFF file** with the same attributes as loaded 
-`rasterio` object. The interpolation results (mesh grids) can also be added into existing & loaded rasterio object.
+`rasterio` object.
 
 ## Methods
 
@@ -29,16 +29,13 @@ The class also allows to **save created mesh grids into a new GeoTIFF file** wit
 |    `-`    |    -    |      -      |
 
 ### `save`
-**Save the provided layers to either a new raster file (GeoTIFF) or into the loaded DatasetReader object of the class 
-instance.** The new raster file will have same attributes as the loaded DatasetReader object (crs, height, width etc.).
+**Save the provided layers to a new raster file (GeoTIFF).** The new raster file will have same attributes as the loaded 
+DatasetReader object (crs, height, width etc.).
 
-**Note that:** if the `inplace` parameter is False, then the `path` parameter must be specified.
-
-| Parameter |    Accepts    |                                                                                    Description                                                                                     |
-|:---------:|:-------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `layers`  | List[ndarray] |                                                         List of numpy arrays representing layers (mesh grids) to be saved.                                                         |
-|  `path`   |      str      |                                        A path to the raster file to be created, used only if the `inplace` parameter is `False`. Optional.                                         |
-| `inplace` |     bool      | If `True`, the layers will be saved directly to the current DatasetReader object loaded into the class instance. Otherwise, a new raster file will be created. Default is `False`. |
+| Parameter |    Accepts    |                            Description                             |
+|:---------:|:-------------:|:------------------------------------------------------------------:|
+| `layers`  | List[ndarray] | List of numpy arrays representing layers (mesh grids) to be saved. |
+|  `path`   |      str      |          A path to the raster file that will be created.           |
 
 ## Attributes
 

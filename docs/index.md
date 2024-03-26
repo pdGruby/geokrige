@@ -76,7 +76,3 @@ plt.show()
 <p align="center">
     <img alt="GeoKrige - simple prediction result" src="images/index-prediction.png"/>
 </p>
-
-<p align="center">
-    <img alt="GeoKrige - covariance matrix" src="images/getting_started-covariance_matrix.png"/>
-</p>

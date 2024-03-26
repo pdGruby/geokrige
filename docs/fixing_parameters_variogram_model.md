@@ -82,6 +82,7 @@ If only one of the parameters is fixed, the other one will be estimated. The plo
 ```py
 kgn.fit(model='linear', range_param=6)
 
+import matplotlib.pyplot as plt
 plt.plot([6, 6], [0, 2.5], color='red', zorder=1)
 plt.text(6.1, 0.5, 'range_param', ha='left', color='red')
 plt.show()

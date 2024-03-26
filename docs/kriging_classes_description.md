@@ -133,6 +133,18 @@ Dictionary containing variogram and covariance functions for different models.
 
 **Type:** dict
 
+### `X_loaded`
+
+The original `X` data loaded using the `load` method (no transformation performed on this object).
+
+**Type:** ndarray, GeoDataFrame
+
+### `y_loaded`
+
+The original `y` data loaded using the `load` method (no transformation performed on this object).
+
+**Type:** ndarray, str
+
 ### `X`
 
 Input data loaded using the `load` method. If a `GeoDataFrame` object has been loaded, it undergoes transformation and 
@@ -142,7 +154,7 @@ is then stored in this attribute as an `ndarray` object.
 
 ### `y`
 
-Dependent variable values.
+Dependent variable values. The values here are transformed by the `scaler` object.
 
 **Type:** ndarray, str
 

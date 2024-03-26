@@ -221,16 +221,16 @@ kgn.evaluate(seed=3)
 ```
 
 ```
->>> Mean Absolute Error: 0.8007364939537102
->>> Root-Mean-Square Error: 0.8828856570430776
+>>> Mean Absolute Error: 0.7039604146571146
+>>> Root-Mean-Square Error: 0.7780971156412542
 ```
 
 The `seed` parameter specifies a seed for the `numpy.random` module. Setting the parameter to a specific value ensures 
-that identical results will be produced in each evaluation rerun. When the seed value is set to None, the 
+that identical results will be produced in each evaluation rerun. When the seed value is set to `None`, the 
 cross-validation groups are created randomly, resulting in potentially different evaluation results across runs.
 
-**In the scenario described in this tutorial, with a MAE totaling around 0.80, it implies that the predicted values may 
-deviate from the actual values by approximately ±0.8 on average.** 
+**In the scenario described in this tutorial, with a MAE totaling around 0.70, it implies that the predicted values may 
+deviate from the actual values by approximately ±0.70 on average.** 
 
 However, determining whether this level of accuracy is satisfactory depends on various factors, such as the specific 
 application, the acceptable margin of error, and the consequences of inaccurate predictions. As there is no universal 
